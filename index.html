@@ -26,6 +26,7 @@
       width: 90%;
       max-width: 1200px;
       margin: 0 auto;
+      padding: 0 15px;
     }
     
     header {
@@ -45,19 +46,37 @@
     }
     
     .logo {
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 700;
       color: var(--primary);
+      z-index: 1001;
     }
     
     .logo span {
       color: var(--secondary);
     }
     
+    /* Mobile menu styles */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: var(--secondary);
+      cursor: pointer;
+      z-index: 1001;
+    }
+    
+    nav {
+      transition: all 0.3s ease;
+    }
+    
     nav ul {
       display: flex;
       list-style: none;
-      align-items: baseline;
+      align-items: center;
+      margin: 0;
+      padding: 0;
     }
     
     nav ul li {
@@ -78,21 +97,21 @@
     .hero {
       background: linear-gradient(135deg, #e85f4a 0%, #820a0a 100%);
       color: white;
-      padding: 160px 0 80px;
+      padding: 140px 0 60px;
       text-align: center;
       position: relative;
       z-index: 1;
     }
     
     .hero h1 {
-      font-size: 48px;
+      font-size: 36px;
       margin-bottom: 20px;
       font-weight: 800;
     }
     
     .hero p {
-      font-size: 24px;
-      margin-bottom: 40px;
+      font-size: 18px;
+      margin-bottom: 30px;
       max-width: 800px;
       margin-left: auto;
       margin-right: auto;
@@ -100,7 +119,7 @@
     
     .btn {
       display: inline-block;
-      padding: 12px 30px;
+      padding: 10px 25px;
       background-color: var(--success);
       color: white;
       text-decoration: none;
@@ -109,6 +128,8 @@
       transition: all 0.3s;
       text-transform: uppercase;
       letter-spacing: 1px;
+      border: none;
+      cursor: pointer;
     }
     
     .btn:hover {
@@ -118,9 +139,12 @@
     
     .download-btn {
       background-color: var(--success);
-      font-size: 20px;
-      padding: 16px 40px;
+      font-size: 16px;
+      padding: 12px 25px;
       margin-top: 20px;
+      white-space: normal;
+      text-align: center;
+      margin-bottom: 10px;
     }
     
     .platforms {
@@ -135,16 +159,16 @@
     }
     
     section {
-      padding: 80px 0;
+      padding: 60px 0;
     }
     
     .section-title {
       text-align: center;
-      margin-bottom: 60px;
+      margin-bottom: 40px;
     }
     
     .section-title h2 {
-      font-size: 36px;
+      font-size: 30px;
       color: var(--secondary);
       position: relative;
       padding-bottom: 15px;
@@ -156,7 +180,7 @@
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
-      width: 100px;
+      width: 80px;
       height: 3px;
       background-color: var(--primary);
     }
@@ -167,9 +191,9 @@
     
     .feature-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
-      margin-top: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
     }
     
     .feature-card {
@@ -178,14 +202,15 @@
       overflow: hidden;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       transition: transform 0.3s;
+      margin-bottom: 20px;
     }
     
     .feature-card:hover {
-      transform: translateY(-10px);
+      transform: translateY(-5px);
     }
     
     .feature-img {
-      height: 200px;
+      height: 180px;
       overflow: hidden;
     }
     
@@ -196,30 +221,30 @@
     }
     
     .feature-content {
-      padding: 25px;
+      padding: 20px;
     }
     
     .feature-content h3 {
-      font-size: 22px;
-      margin-bottom: 15px;
+      font-size: 20px;
+      margin-bottom: 10px;
       color: var(--secondary);
     }
     
     .endorsements {
       text-align: center;
-      padding: 60px 0;
+      padding: 50px 0;
     }
     
     .endorsement-logos {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      margin: 30px 0;
+      margin: 20px 0;
     }
     
     .endorsement-logos img {
-      max-height: 60px;
+      max-height: 50px;
       margin: 15px;
       filter: grayscale(100%);
       opacity: 0.7;
@@ -233,22 +258,23 @@
     
     .testimonial {
       background-color: white;
-      padding: 30px;
+      padding: 25px;
       border-radius: 8px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       max-width: 800px;
-      margin: 40px auto;
+      margin: 30px auto;
     }
     
     .testimonial p {
       font-style: italic;
-      font-size: 18px;
-      margin-bottom: 20px;
+      font-size: 16px;
+      margin-bottom: 15px;
     }
     
     .testimonial-author {
       font-weight: 600;
       color: var(--primary);
+      font-size: 14px;
     }
     
     .pricing {
@@ -259,7 +285,7 @@
     .price-cards {
       display: flex;
       justify-content: center;
-      gap: 30px;
+      gap: 20px;
       flex-wrap: wrap;
     }
     
@@ -268,38 +294,41 @@
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      width: 300px;
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 20px;
     }
     
     .price-header {
       background-color: var(--secondary);
       color: white;
-      padding: 20px;
+      padding: 15px;
     }
     
     .price-header h3 {
       margin: 0;
-      font-size: 24px;
+      font-size: 22px;
     }
     
     .price-feature {
-      padding: 25px;
+      padding: 20px;
     }
     
     .price-feature ul {
       padding-left: 20px;
       text-align: left;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
     
     .price-feature li {
-      margin-bottom: 10px;
+      margin-bottom: 8px;
+      font-size: 15px;
     }
     
     .price {
-      font-size: 36px;
+      font-size: 32px;
       font-weight: 700;
-      margin: 20px 0;
+      margin: 15px 0;
     }
     
     .price span {
@@ -313,62 +342,23 @@
     }
     
     .premium::before {
-      content: 'MOST POPULAR';
+      content: 'POPULAR';
       position: absolute;
-      top: 25px;
-      right: -30px;
+      top: 20px;
+      right: -25px;
       transform: rotate(45deg);
       background-color: var(--success);
       color: white;
-      padding: 5px 40px;
-      font-size: 12px;
+      padding: 5px 30px;
+      font-size: 10px;
       font-weight: 600;
     }
     
     footer {
       background-color: var(--secondary);
       color: white;
-      padding: 30px 0 30px;
-    }
-    
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-    }
-    
-    .footer-col h4 {
-      margin-bottom: 20px;
-      font-size: 18px;
-    }
-    
-    .footer-col ul {
-      list-style: none;
-      padding: 0;
-    }
-    
-    .footer-col ul li {
-      margin-bottom: 10px;
-    }
-    
-    .footer-col ul li a {
-      color: #ddd;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    
-    .footer-col ul li a:hover {
-      color: white;
-    }
-    
-    .social-icons {
-      display: flex;
-      gap: 15px;
-    }
-    
-    .social-icons a {
-      color: white;
-      font-size: 22px;
+      padding: 25px 0;
+      text-align: center;
     }
     
     .footer-bottom {
@@ -380,60 +370,159 @@
       color: #ddd;
       text-decoration: none;
       margin: 0 10px;
+      display: inline-block;
+      margin-bottom: 5px;
     }
     
-    .gradient-bg {
-      background: linear-gradient(135deg, #e85f4a 0%, #820a0a 100%);
-      padding: 100px 0;
-      color: white;
-      text-align: center;
+    .banner {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      opacity: 0.5;
+      filter: blur(5px);
+      object-position: top;
     }
     
-    .gradient-bg h2 {
-      font-size: 36px;
+    /* Contact form styles */
+    .contact-form {
+      max-width: 100%;
+      margin: 0 auto;
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .form-group {
       margin-bottom: 20px;
     }
     
-    .compliance-icons {
-      display: flex;
-      justify-content: center;
-      gap: 50px;
-      margin: 40px 0;
-    }
-    
-    .compliance-icon {
-      text-align: center;
-    }
-    
-    .compliance-icon i {
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
-    
-    /* Badge styling */
-    .badge {
-      display: inline-block;
-      background-color: #ff6b6b;
-      color: white;
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-size: 12px;
+    .form-label {
+      display: block;
+      margin-bottom: 5px;
       font-weight: 600;
-      margin-left: 10px;
-      text-transform: uppercase;
     }
-
-    .banner {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        position: absolute;
+    
+    .form-input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    .download-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .download-section .btn {
+      margin: 10px 0;
+      min-width: 200px;
+    }
+    
+    /* Media queries for responsive design */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      
+      nav {
+        position: fixed;
         top: 0;
-        left: 0;
-        z-index: -1;
-        opacity: 0.5;
-        filter: blur(5px);
-        object-position: top;
+        right: -100%;
+        width: 70%;
+        height: 100%;
+        background-color: white;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+        z-index: 1000;
+        transition: right 0.3s ease;
+      }
+      
+      nav.active {
+        right: 0;
+      }
+      
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 80px 20px 20px;
+      }
+      
+      nav ul li {
+        margin: 15px 0;
+        width: 100%;
+      }
+      
+      nav ul li a.btn {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+      }
+      
+      .hero {
+        padding: 120px 0 40px;
+      }
+      
+      .hero h1 {
+        font-size: 28px;
+      }
+      
+      .hero p {
+        font-size: 16px;
+      }
+      
+      .download-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+      
+      .section-title h2 {
+        font-size: 26px;
+      }
+      
+      .download-section .btn {
+        width: 100%;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .logo {
+        font-size: 20px;
+      }
+      
+      .hero h1 {
+        font-size: 24px;
+      }
+      
+      .price-card {
+        max-width: 100%;
+      }
+      
+      .endorsement-logos img {
+        max-height: 40px;
+      }
+    }
+    
+    /* Overlay for mobile menu */
+    .menu-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 999;
+    }
+    
+    .menu-overlay.active {
+      display: block;
     }
   </style>
   <!-- Including Font Awesome for icons -->
@@ -445,7 +534,10 @@
     <div class="container">
       <div class="header-content">
         <div class="logo">Service<span>Tensor</span></div>
-        <nav>
+        <button class="menu-toggle" id="menuToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <nav id="mobileNav">
           <ul>
             <li><a href="#features">Features</a></li>
             <li><a href="#endorsements">Endorsements</a></li>
@@ -457,6 +549,8 @@
       </div>
     </div>
   </header>
+  
+  <div class="menu-overlay" id="menuOverlay"></div>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -598,10 +692,10 @@
         <h2>Get Started Today</h2>
         <p>Download ServiceTensor and transform your business in minutes</p>
       </div>
-      <div style="text-align: center;">
+      <div class="download-section">
         <a onclick="oi(event)" href="#" class="btn download-btn">Download For Windows <i class="fab fa-windows"></i></a>
-        <a onclick="oi(event)" href="#" class="btn download-btn" style="margin-left: 20px;">Download For macOS <i class="fab fa-apple"></i></a>
-        <a onclick="oi(event)" href="#" class="btn download-btn" style="margin-left: 20px;">Download For Linux <i class="fab fa-linux"></i></a>
+        <a onclick="oi(event)" href="#" class="btn download-btn">Download For macOS <i class="fab fa-apple"></i></a>
+        <a onclick="oi(event)" href="#" class="btn download-btn">Download For Linux <i class="fab fa-linux"></i></a>
       </div>
     </div>
   </section>
@@ -613,23 +707,23 @@
         <h2>Get In Touch</h2>
         <p>Our enterprise solutions experts are ready to help</p>
       </div>
-      <div style="max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+      <div class="contact-form">
         <form>
-          <div style="margin-bottom: 20px;">
-            <label for="name" style="display: block; margin-bottom: 5px; font-weight: 600;">Full Name</label>
-            <input type="text" id="name" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+          <div class="form-group">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" id="name" class="form-input">
           </div>
-          <div style="margin-bottom: 20px;">
-            <label for="email" style="display: block; margin-bottom: 5px; font-weight: 600;">Business Email</label>
-            <input type="email" id="email" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+          <div class="form-group">
+            <label for="email" class="form-label">Business Email</label>
+            <input type="email" id="email" class="form-input">
           </div>
-          <div style="margin-bottom: 20px;">
-            <label for="company" style="display: block; margin-bottom: 5px; font-weight: 600;">Company Name</label>
-            <input type="text" id="company" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+          <div class="form-group">
+            <label for="company" class="form-label">Company Name</label>
+            <input type="text" id="company" class="form-input">
           </div>
-          <div style="margin-bottom: 20px;">
-            <label for="message" style="display: block; margin-bottom: 5px; font-weight: 600;">Message</label>
-            <textarea id="message" rows="5" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+          <div class="form-group">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" rows="4" class="form-input"></textarea>
           </div>
           <button onclick="gnome(event)" type="submit" class="btn" style="background-color: var(--primary); width: 100%;">Send Message</button>
         </form>
@@ -639,32 +733,73 @@
 
   <!-- Footer -->
   <footer>
-      <div class="footer-bottom">
-        <p>&copy; 2025 ServiceTensor. All rights reserved.</p>
-        <div style="margin-top: 10px;">
-          <a onclick="gnome(event)" href="#">Privacy Policy</a>
-          <a onclick="gnome(event)" href="#">Terms of Use</a>
-          <a onclick="gnome(event)" href="#">Cookie Policy</a>
-          <a onclick="gnome(event)" href="#">Compliance</a>
-        </div>
+    <div class="footer-bottom">
+      <p>© 2025 ServiceTensor. All rights reserved.</p>
+      <div style="margin-top: 10px;">
+        <a onclick="gnome(event)" href="#">Privacy Policy</a>
+        <a onclick="gnome(event)" href="#">Terms of Use</a>
+        <a onclick="gnome(event)" href="#">Cookie Policy</a>
+        <a onclick="gnome(event)" href="#">Compliance</a>
       </div>
+    </div>
   </footer>
+  
   <script>
+    // Mobile menu functionality
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    const menuOverlay = document.getElementById('menuOverlay');
+    
+    menuToggle.addEventListener('click', function() {
+      mobileNav.classList.toggle('active');
+      menuOverlay.classList.toggle('active');
+      
+      // Change icon based on menu state
+      const icon = menuToggle.querySelector('i');
+      if (mobileNav.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+    
+    menuOverlay.addEventListener('click', function() {
+      mobileNav.classList.remove('active');
+      menuOverlay.classList.remove('active');
+      const icon = menuToggle.querySelector('i');
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+    });
+    
+    // Close mobile menu when clicking on a nav link
+    const navLinks = document.querySelectorAll('nav ul li a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        mobileNav.classList.remove('active');
+        menuOverlay.classList.remove('active');
+        const icon = menuToggle.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      });
+    });
+    
     function oi(e) {
-        e.preventDefault();
-        const audio = new Audio('oi.mp3');
-        audio.volume = 0.5;
-        audio.play();
+      e.preventDefault();
+      const audio = new Audio('oi.mp3');
+      audio.volume = 0.5;
+      audio.play();
     }
 
     function gnome(e) {
-        e.preventDefault();
-        window.location.href = 'https://www.youtube.com/watch?v=6n3pFFPSlW4';
+      e.preventDefault();
+      window.location.href = 'https://www.youtube.com/watch?v=6n3pFFPSlW4';
     }
 
     function rickroll(e) {
-        e.preventDefault();
-        window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+      e.preventDefault();
+      window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
     }
   </script>
 </body>
